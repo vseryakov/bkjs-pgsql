@@ -13,7 +13,7 @@ Convert JSON types, arrays and numbers into Javascript types, binary as Buffers,
      client.setNotify(function(msg) { logger.log('pgsql: notify:', msg) });
   });
 
-  db.query("SELECT name FROM sqlite_master WHERE type='?'", ["table"], function(err, tables) {
+  db.query("SELECT name FROM sqlite_master WHERE type='$1'", ["table"], function(err, tables) {
     console.log(err, tables);
   });
 ```
