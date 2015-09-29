@@ -27,9 +27,9 @@ Convert JSON types, arrays and numbers into Javascript types, binary as Buffers,
   - `affected_rows` - returns number of rows affected by the last operation
   - `inserted_oid` - last auto generated ID
   - `connect([callback])` - connect to the server, if no callback is given an exception will be thrown on error
-  - `query(sql, [values], [callback])` - execute any SQL statement in a worker thread, if a callback
+  - `query(sql, [values], [callback])` - execute any SQL statement asynchronously, if a callback
      is given it will be passed an array with result if exists, otherwise empty array
-  - `querySync(sql, [values])` - execute a SQL statement synchronously, returns array with result
+  - `querySync(sql, [values])` - execute a SQL statement in blocking mode, returns array with result
   - `close([callback])` - close the database, on completion call the callback if given
   - `destroy()` - close the database, free memory, this object cannot be used anymore
   - `reset()` - reset internal memory, free results, this is called before every query but in case of huge result
