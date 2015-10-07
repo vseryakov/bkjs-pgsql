@@ -282,7 +282,7 @@ void PgSQLDatabase::Init(Handle<Object> target)
     NODE_SET_PROTOTYPE_METHOD(t, "close", Close);
     NODE_SET_PROTOTYPE_METHOD(t, "reset", Reset);
     NODE_SET_PROTOTYPE_METHOD(t, "destroy", Destroy);
-    target->Set(String::NewSymbol("PgSQLDatabase"), constructor_template->GetFunction());
+    target->Set(String::NewSymbol("Database"), constructor_template->GetFunction());
 }
 
 Handle<Value> PgSQLDatabase::OpenGetter(Local<String> str, const AccessorInfo& accessor)
