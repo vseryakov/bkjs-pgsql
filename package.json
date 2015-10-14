@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "author": "Vlad Seryakov",
   "name": "bkjs-pgsql",
-  "description": "PostgreSQL support for node.js and backendjs",
+  "description": "PostgreSQL driver for node.js and backendjs",
   "main": "build/Release/binding",
   "homepage": "https://github.com/vseryakov/backendjs",
   "repository": {

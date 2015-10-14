@@ -1,5 +1,7 @@
 # PostgreSQL module for node and backendjs
 
+Supports blocking and nonblocking mode, async mode of operations is the default.
+
 Convert JSON types, arrays and numbers into Javascript types, binary as Buffers, the rest as strings.
 
 # Usage
