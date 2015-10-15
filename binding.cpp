@@ -5,7 +5,6 @@
 
 #include "bkjs.h"
 #include "bklib.h"
-#include "bklog.h"
 #include "libpq-fe.h"
 
 #define DISPOSE(cb) if (!cb.IsEmpty()) { cb.Dispose(); cb.Clear(); }
@@ -707,21 +706,21 @@ Local<Array> PgSQLDatabase::Handle_Result(PGresult* result)
             case 1009: // text
             case 1014: // char
             case 1015: // varchar
-                list = strSplit(string(val, 1, len - 2), ",", "\"");
+                list = bkStrSplit(string(val, 1, len - 2), ",", "\"");
                 value = Local<Value>::New(toArray(list));
                 break;
 
             case 1005: // int2
             case 1007: // int4
             case 1016: // int8
-                list = strSplit(string(val, 1, len - 2), ",");
+                list = bkStrSplit(string(val, 1, len - 2), ",");
                 value = Local<Value>::New(toArray(list, 1));
                 break;
 
             case 1021: // float4
             case 1022: // float8
             case 1231: // numeric
-                list = strSplit(string(val, 1, len - 2), ",");
+                list = bkStrSplit(string(val, 1, len - 2), ",");
                 value = Local<Value>::New(toArray(list, 2));
                 break;
 

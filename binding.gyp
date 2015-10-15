@@ -28,7 +28,6 @@
         "binding.cpp",
         "bklib/bkjs.cpp",
         "bklib/bklib.cpp",
-        "bklib/bklog.cpp",
         "libpq/chklocale.c",
         "libpq/fe-connect.c",
         "libpq/fe-misc.c",
