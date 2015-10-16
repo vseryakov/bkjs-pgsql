@@ -15,8 +15,8 @@ Convert JSON types, arrays and numbers into Javascript types, binary as Buffers,
      client.setNotify(function(msg) { logger.log('pgsql: notify:', msg) });
   });
 
-  db.query("SELECT name FROM sqlite_master WHERE type='$1'", ["table"], function(err, tables) {
-    console.log(err, tables);
+  db.query("select * from pg_stat_activity where state=$1", ["active"], function(err, rows) {
+     console.log(err, rows);
   });
 ```
 
@@ -40,7 +40,7 @@ Convert JSON types, arrays and numbers into Javascript types, binary as Buffers,
   - `setNonblocking(flag)` - enable or disable blocking behaviour, default is non-blocking
   - `setNotify(callback)` - attach notification callback to be called on every NOTIFY message from the server
 
-# Author 
+# Author
 
 Vlad Seryakov
 
